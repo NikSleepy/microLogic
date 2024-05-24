@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "img": "/img/countDown1.jpg",
+    "endpoint": "countdown"
+  },
+  {
+    "id": 2,
+    "img": "/img/currencyConvert.png",
+    "endpoint": "currencyConvert"
+  },
+  {
+    "id": 3,
+    "img": "/img/scrambleWord.jpg",
+    "endpoint": "scrambleWord"
+  },
+  {
+    "id": 4,
+    "img": "/img/currentSalary.png",
+    "endpoint": "currentSalary"
+  }
+]
