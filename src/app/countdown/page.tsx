@@ -64,7 +64,7 @@ const page = () => {
         <text className="font-bold text-2xl sm:text-4xl">Count Duration</text>
       </div>
 
-      <div className="w-full  flex justify-center my-10  text-white">
+      <div className="w-full  flex justify-center text-white">
         <div className="bg-[#824D74] w-[80%] p-10 border border-slate-50 grid place-items-center rounded-lg">
           <text className="mb-4 text-justify">
             Pilih Tanggal untuk Memulai Hitungan Mundur

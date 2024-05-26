@@ -18,5 +18,10 @@
     "id": 4,
     "img": "/img/currentSalary.png",
     "endpoint": "currentSalary"
+  },
+  {
+    "id": 5,
+    "img": "/img/mobileLegends.jpg",
+    "endpoint": "mobileLegends"
   }
 ]

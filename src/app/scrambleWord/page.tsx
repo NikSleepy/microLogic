@@ -1,8 +1,8 @@
 'use client';
-import ButtonBack from '@/component/ButtonBack';
 import React, { useEffect, useState } from 'react';
 import dummy from '../../mock/wordscrumble.json';
 import { FaTrophy } from 'react-icons/fa';
+import { Navbar } from '@/component/Navbar';
 
 const page = () => {
   const [randomWord, setRandomWord] = useState('');
@@ -41,9 +41,10 @@ const page = () => {
   };
 
   return (
-    <div className="h-screen bg-[#151515] text-white">
-      <ButtonBack />
-      <div className="w-full h-[10%] flex flex-col text-center justify-between ">
+    <div className="h-screen flex">
+      <Navbar/>
+      <div className='bg-[#151515] text-white w-full'>
+      <div className="w-full h-[10%] flex flex-col text-center justify-between mt-16">
         <text className="font-bold text-2xl sm:text-4xl">Screamble Word</text>
       </div>
 
@@ -85,6 +86,7 @@ const page = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

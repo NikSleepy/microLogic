@@ -1,5 +1,5 @@
 'use client';
-import ButtonBack from '@/component/ButtonBack';
+import { Navbar } from '@/component/Navbar';
 import React, { useEffect, useState } from 'react';
 
 const page = () => {
@@ -48,73 +48,75 @@ const page = () => {
   }, [exchangeRate, amount]);
 
   return (
-    <div className="bg-[#1C1678] text-[#A3FFD6] h-screen">
-      <ButtonBack />
-      <div className="w-full h-[10%] grid place-items-center ">
-        <text className="font-bold text-2xl sm:text-4xl ">
-          Converter Currency
-        </text>
-      </div>
-
-      <div className="w-full flex justify-center">
-        <div className="bg-[#8576FF] w-[80%] p-10 border border-slate-50 grid place-items-center rounded-lg text-black my-5">
-          <text className="mb-4 text-justify">
-            Konversi mata uang IDR, USD, EUR, GBP
+    <div className="flex h-screen">
+      <Navbar />
+      <div className="bg-[#1C1678] text-[#A3FFD6] w-full">
+        <div className="w-full h-[10%] grid place-items-center mt-20 ">
+          <text className="font-bold text-2xl sm:text-4xl ">
+            Converter Currency
           </text>
+        </div>
 
-          <div className="gap-10 border-1 w-full grid justify-items-center">
-            <form className="flex flex-col md:flex-row w-full justify-center gap-3">
-              <div>
-                <label htmlFor="amount">Jumlah: </label>
-                <input
-                  type="number"
-                  id="amount"
-                  value={amount}
-                  onChange={handleAmountChange}
-                  className="text-black"
-                />
-              </div>
-              <div>
-                <label htmlFor="fromCurrency">Dari Mata Uang: </label>
-                <select
-                  id="fromCurrency"
-                  value={fromCurrency}
-                  onChange={handleFromCurrencyChange}
-                  className="text-black"
-                >
-                  <option value="IDR">IDR</option>
-                  <option value="USD">USD</option>
-                  <option value="EUR">EUR</option>
-                  <option value="GBP">GBP</option>
-                </select>
-              </div>
+        <div className="w-full flex justify-center">
+          <div className="bg-[#8576FF] w-[80%] p-10 border border-slate-50 grid place-items-center rounded-lg text-black my-5">
+            <text className="mb-4 text-justify">
+              Konversi mata uang IDR, USD, EUR, GBP
+            </text>
 
-              <div>
-                <label htmlFor="toCurrency">Ke Mata Uang: </label>
-                <select
-                  id="toCurrency"
-                  value={toCurrency}
-                  onChange={handleToCurrencyChange}
-                  className="text-black"
-                >
-                  <option value="IDR">IDR</option>
-                  <option value="USD">USD</option>
-                  <option value="EUR">EUR</option>
-                  <option value="GBP">GBP</option>
-                </select>
-              </div>
-            </form>
+            <div className="gap-10 border-1 w-full grid justify-items-center">
+              <form className="flex flex-col md:flex-row w-full justify-center gap-3">
+                <div>
+                  <label htmlFor="amount">Jumlah: </label>
+                  <input
+                    type="number"
+                    id="amount"
+                    value={amount}
+                    onChange={handleAmountChange}
+                    className="text-black p-2 rounded-lg"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="fromCurrency">Dari Mata Uang: </label>
+                  <select
+                    id="fromCurrency"
+                    value={fromCurrency}
+                    onChange={handleFromCurrencyChange}
+                    className="text-black p-2 rounded-lg"
+                  >
+                    <option value="IDR">IDR</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                  </select>
+                </div>
 
-            <div className="my-3">
-              <p>Hasil Konversi:</p>
-              {convertedAmount !== null ? (
-                <p>
-                  {amount} {fromCurrency} = {convertedAmount.toFixed(2)}{' '}
-                  {toCurrency}
-                </p>
-              ) : (
-                <p>Loading...</p>
-              )}
+                <div>
+                  <label htmlFor="toCurrency">Ke Mata Uang: </label>
+                  <select
+                    id="toCurrency"
+                    value={toCurrency}
+                    onChange={handleToCurrencyChange}
+                    className="text-black p-2 rounded-lg"
+                  >
+                    <option value="IDR">IDR</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                  </select>
+                </div>
+              </form>
+
+              <div className="my-3">
+                <p>Hasil Konversi:</p>
+                {convertedAmount !== null ? (
+                  <p>
+                    {amount} {fromCurrency} = {convertedAmount.toFixed(2)}{' '}
+                    {toCurrency}
+                  </p>
+                ) : (
+                  <p>Loading...</p>
+                )}
+              </div>
             </div>
           </div>
         </div>

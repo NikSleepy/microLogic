@@ -8,13 +8,6 @@ import { IoMdTimer } from 'react-icons/io';
 
 export const Navbar = () => {
   const navigate = useRouter();
-  const handleMouseOver = (event: any) => {
-    event.target.style.filter = 'grayscale(0%)';
-  };
-  
-  const handleMouseOut = (event: any) => {
-    event.target.style.filter = 'grayscale(100%)';
-  };
 
   return (
     <div
@@ -29,15 +22,13 @@ export const Navbar = () => {
         <img
           src="/img/micrologic_logo.png"
           alt="logo"
-          style={{ width: '60%', height: '100%',  }}
+          style={{ width: '60%', height: '100%' }}
         />
       </div>
 
       <div
         className="grid justify-center grayscale"
-        style={{ color: '#FEF7C3', height: '80%', cursor: 'pointer' }}
-        onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
+        style={{ color: '#FEF7C3', height: '80%' }}
       >
         <ul
           style={{
@@ -50,6 +41,8 @@ export const Navbar = () => {
           <text
             className="flex items-center gap-2 "
             style={{ cursor: 'pointer' }}
+            onClick={() => navigate.push('/countdown')}
+
           >
             <IoMdTimer size={30} />
             Count Down
@@ -57,18 +50,21 @@ export const Navbar = () => {
           <text
             className="flex items-center gap-2 "
             style={{ cursor: 'pointer' }}
+            onClick={() => navigate.push('/currencyConvert')}
           >
             <BsCurrencyExchange size={30} /> Currency Calculating
           </text>
           <text
             className="flex items-center gap-2 "
             style={{ cursor: 'pointer' }}
+            onClick={() => navigate.push('/currentSalary')}
           >
             <AiFillCalculator size={30} /> Salary Calculator
           </text>
           <text
             className="flex items-center gap-2 "
             style={{ cursor: 'pointer' }}
+            onClick={() => navigate.push('/scrambleWord')}
           >
             <FaFileWord size={30} /> Scramble word
           </text>
