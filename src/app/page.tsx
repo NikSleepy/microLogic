@@ -1,16 +1,15 @@
 "use client"
 import MySwiper from "@/component/MySwiper";
-import { useRouter } from "next/navigation";
 
 
 
 export default function Home() {
-  const navigate = useRouter();
 
   return (
     <div className="w-screen h-screen bg-[#2B4257] text-[#FFFDD7]" >
-      <div className='h-1/5 grid place-items-center'>
-        <text className="font-bold text-4xl">Welcome to Micro Logic</text>
+      <div className='h-1/5 grid place-items-center pt-10'>
+        <p className="font-bold text-2xl md:text-4xl">Welcome to Micro Logic</p>
+        <p className="font-semibold text-xl md:text-2xl">Please Choose Your Game</p>
       </div>
 
       <MySwiper/>

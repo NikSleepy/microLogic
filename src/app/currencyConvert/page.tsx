@@ -1,8 +1,9 @@
 'use client';
 import { Navbar } from '@/component/Navbar';
+import { NavbarHp } from '@/component/NavbarHp';
 import React, { useEffect, useState } from 'react';
 
-const page = () => {
+const CurrencyConvert = () => {
   const [amount, setAmount] = useState(1);
   const [fromCurrency, setFromCurrency] = useState('IDR');
   const [toCurrency, setToCurrency] = useState('USD');
@@ -48,20 +49,25 @@ const page = () => {
   }, [exchangeRate, amount]);
 
   return (
-    <div className="flex h-screen">
-      <Navbar />
-      <div className="bg-[#1C1678] text-[#A3FFD6] w-full">
+    <div className="flex h-screen flex-col md:flex-row">
+      <div className="hidden md:block w-[28%]">
+        <Navbar />
+      </div>
+      <div className='md:hidden flex w-full'>
+        <NavbarHp/>
+      </div>
+      <div className="bg-[#1C1678] text-[#A3FFD6] w-full h-full pt-10">
         <div className="w-full h-[10%] grid place-items-center mt-20 ">
-          <text className="font-bold text-2xl sm:text-4xl ">
+          <p className="font-bold text-2xl sm:text-4xl ">
             Converter Currency
-          </text>
+          </p>
         </div>
 
         <div className="w-full flex justify-center">
           <div className="bg-[#8576FF] w-[80%] p-10 border border-slate-50 grid place-items-center rounded-lg text-black my-5">
-            <text className="mb-4 text-justify">
+            <p className="mb-4 text-justify">
               Konversi mata uang IDR, USD, EUR, GBP
-            </text>
+            </p>
 
             <div className="gap-10 border-1 w-full grid justify-items-center">
               <form className="flex flex-col md:flex-row w-full justify-center gap-3">
@@ -81,7 +87,7 @@ const page = () => {
                     id="fromCurrency"
                     value={fromCurrency}
                     onChange={handleFromCurrencyChange}
-                    className="text-black p-2 rounded-lg"
+                    className="text-black p-2 rounded-lg "
                   >
                     <option value="IDR">IDR</option>
                     <option value="USD">USD</option>
@@ -125,4 +131,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default CurrencyConvert;

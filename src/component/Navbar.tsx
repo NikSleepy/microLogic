@@ -1,4 +1,5 @@
 'use ctextent';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { AiFillCalculator } from 'react-icons/ai';
@@ -11,19 +12,15 @@ export const Navbar = () => {
 
   return (
     <div
-      className="h-screen  justify-center md:grid "
-      style={{ backgroundColor: '#1E0342', width: '23%' }}
+      className=" h-screen  justify-center flex flex-col "
+      style={{ backgroundColor: '#1E0342', width: '100%' }}
     >
       <div
-        className="w-full flex justify-center pb-2"
+        className=" w-full flex justify-center pb-2"
         style={{ height: '20%', cursor: 'pointer' }}
         onClick={() => navigate.push('/')}
-      >
-        <img
-          src="/img/micrologic_logo.png"
-          alt="logo"
-          style={{ width: '60%', height: '100%' }}
-        />
+      > 
+        <Image src="/img/micrologic_logo.png" alt="logo" width={500} height={500} priority/>
       </div>
 
       <div
@@ -38,7 +35,7 @@ export const Navbar = () => {
             gap: '15px',
           }}
         >
-          <text
+          <p
             className="flex items-center gap-2 "
             style={{ cursor: 'pointer' }}
             onClick={() => navigate.push('/countdown')}
@@ -46,28 +43,28 @@ export const Navbar = () => {
           >
             <IoMdTimer size={30} />
             Count Down
-          </text>
-          <text
+          </p>
+          <p
             className="flex items-center gap-2 "
             style={{ cursor: 'pointer' }}
             onClick={() => navigate.push('/currencyConvert')}
           >
             <BsCurrencyExchange size={30} /> Currency Calculating
-          </text>
-          <text
+          </p>
+          <p
             className="flex items-center gap-2 "
             style={{ cursor: 'pointer' }}
             onClick={() => navigate.push('/currentSalary')}
           >
             <AiFillCalculator size={30} /> Salary Calculator
-          </text>
-          <text
+          </p>
+          <p
             className="flex items-center gap-2 "
             style={{ cursor: 'pointer' }}
             onClick={() => navigate.push('/scrambleWord')}
           >
             <FaFileWord size={30} /> Scramble word
-          </text>
+          </p>
         </ul>
       </div>
     </div>
