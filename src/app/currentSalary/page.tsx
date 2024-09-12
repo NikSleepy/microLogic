@@ -57,7 +57,7 @@ const CurrentSalary = () => {
     });
   };
   return (
-    <div className="flex h-screen flex-col md:flex-row">
+    <div className="flex h-auto md:h-screen flex-col md:flex-row">
       <div className="hidden md:block w-[28%]">
         <Navbar />
       </div>
